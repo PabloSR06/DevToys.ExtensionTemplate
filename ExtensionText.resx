@@ -30,4 +30,7 @@
     <data name="Description" xml:space="preserve">
         <value>The tool's title, displayed at the top of the screen when the user navigates to the tool.</value>
     </data>
+    <data name="HelloWorldLabel" xml:space="preserve">
+        <value>Hello World</value>
+    </data>
 </root>

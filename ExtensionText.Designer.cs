@@ -78,6 +78,15 @@ namespace DevToysExtensionTemplate {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hello World.
+        /// </summary>
+        internal static string HelloWorldLabel {
+            get {
+                return ResourceManager.GetString("HelloWorldLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A descriptive name of the tool, useful for users who rely on assistive technology such as screen readers..
         /// </summary>
         internal static string LongDisplayTitle {
