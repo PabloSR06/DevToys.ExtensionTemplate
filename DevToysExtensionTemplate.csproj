@@ -4,6 +4,13 @@
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <PackageId>DevToysExtensionTemplate</PackageId>
+        <Version>0.0.1</Version>
+        <Authors>Pablo Suarez</Authors>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <Description>Template to create extension for DevToys</Description>
+        <RepositoryUrl>https://github.com/PabloSR06/DevToysExtensionTemplate</RepositoryUrl>
     </PropertyGroup>
 
     
