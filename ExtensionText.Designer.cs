@@ -69,11 +69,29 @@ namespace DevToysExtensionTemplate {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Close.
+        /// </summary>
+        internal static string CloseLabel {
+            get {
+                return ResourceManager.GetString("CloseLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The tool&apos;s title, displayed at the top of the screen when the user navigates to the tool..
         /// </summary>
         internal static string Description {
             get {
                 return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        internal static string DescriptionLabel {
+            get {
+                return ResourceManager.GetString("DescriptionLabel", resourceCulture);
             }
         }
         
@@ -96,11 +114,29 @@ namespace DevToysExtensionTemplate {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Open a modal dialog.
+        /// </summary>
+        internal static string OpenDialogLabel {
+            get {
+                return ResourceManager.GetString("OpenDialogLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A brief description of the tool, displayed in the grid of tools on the DevToys main page..
         /// </summary>
         internal static string ShortDisplayTitle {
             get {
                 return ResourceManager.GetString("ShortDisplayTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title.
+        /// </summary>
+        internal static string TitleLabel {
+            get {
+                return ResourceManager.GetString("TitleLabel", resourceCulture);
             }
         }
     }

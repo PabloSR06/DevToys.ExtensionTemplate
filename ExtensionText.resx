@@ -33,4 +33,16 @@
     <data name="HelloWorldLabel" xml:space="preserve">
         <value>Hello World</value>
     </data>
+    <data name="TitleLabel" xml:space="preserve">
+        <value>Title</value>
+    </data>
+    <data name="DescriptionLabel" xml:space="preserve">
+        <value>Description</value>
+    </data>
+    <data name="CloseLabel" xml:space="preserve">
+        <value>Close</value>
+    </data>
+    <data name="OpenDialogLabel" xml:space="preserve">
+        <value>Open a modal dialog</value>
+    </data>
 </root>
