@@ -9,6 +9,7 @@
         <Authors>Pablo Suarez</Authors>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageReadmeFile>README.md</PackageReadmeFile>
+        <Title>Extension Template</Title>
         <Description>Template to create extension for DevToys</Description>
         <RepositoryUrl>https://github.com/PabloSR06/ExtensionTemplate</RepositoryUrl>
     </PropertyGroup>
