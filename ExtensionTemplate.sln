@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevToysExtensionTemplate", "DevToysExtensionTemplate.csproj", "{77C7D06F-10C3-45FD-BC1D-DD1C95F84D1C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtensionTemplate", "ExtensionTemplate.csproj", "{77C7D06F-10C3-45FD-BC1D-DD1C95F84D1C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

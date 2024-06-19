@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DevToysExtensionTemplate {
+namespace ExtensionTemplate {
     using System;
     
     
@@ -38,7 +38,7 @@ namespace DevToysExtensionTemplate {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DevToysExtensionTemplate.ExtensionText", typeof(ExtensionText).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ExtensionTemplate.ExtensionText", typeof(ExtensionText).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

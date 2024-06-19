@@ -2,7 +2,7 @@
 using System.ComponentModel.Composition;
 using static DevToys.Api.GUI;
 
-namespace DevToysExtensionTemplate;
+namespace ExtensionTemplate;
 
 [Export(typeof(IGuiTool))]
 [Name("ExtensionName")] // A unique, internal name of the tool.
@@ -12,7 +12,7 @@ namespace DevToysExtensionTemplate;
     GroupName = PredefinedCommonToolGroupNames.Converters, // The group in which the tool will appear in the side bar.
     ResourceManagerAssemblyIdentifier = nameof(ResourceAssemblyIdentifier), // The Resource Assembly Identifier to use
     ResourceManagerBaseName =
-        "DevToysExtensionTemplate.ExtensionText", // The full name (including namespace) of the resource file containing our localized texts
+        "ExtensionTemplate.ExtensionText", // The full name (including namespace) of the resource file containing our localized texts
     ShortDisplayTitleResourceName =
         nameof(ExtensionText.ShortDisplayTitle), // The name of the resource to use for the short display title
     LongDisplayTitleResourceName = nameof(ExtensionText.LongDisplayTitle),// The name of the resource to use for the long display title

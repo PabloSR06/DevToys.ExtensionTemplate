@@ -1,7 +1,7 @@
 ﻿using DevToys.Api;
 using System.ComponentModel.Composition;
 
-namespace DevToysExtensionTemplate;
+namespace ExtensionTemplate;
 
 [Export(typeof(IResourceAssemblyIdentifier))]
 [Name(nameof(ResourceAssemblyIdentifier))]
