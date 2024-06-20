@@ -19,7 +19,7 @@ namespace ExtensionTemplate;
     LongDisplayTitleResourceName = nameof(ExtensionText.LongDisplayTitle),// The name of the resource to use for the long display title
     DescriptionResourceName = nameof(ExtensionText.Description), // The name of the resource to use for the description resource name
     AccessibleNameResourceName = nameof(ExtensionText.AccessibleName))] // The name of the resource to use for the accessible name resource name
-internal sealed class ExtensionGui : IGuiTool
+internal sealed class ExtensionGui : IGuiTool, IDisposable
 {
     private readonly UIToolView _view = new UIToolView();
     private readonly ILogger _logger;
