@@ -1,5 +1,6 @@
 ﻿using DevToys.Api;
 using System.ComponentModel.Composition;
+using Microsoft.Extensions.Logging;
 using static DevToys.Api.GUI;
 
 namespace ExtensionTemplate;
@@ -21,7 +22,18 @@ namespace ExtensionTemplate;
 internal sealed class ExtensionGui : IGuiTool
 {
     private readonly UIToolView _view = new UIToolView();
+    private readonly ILogger _logger;
+    private readonly DisposableSemaphore _semaphore = new();
+    private readonly ISettingsProvider _settingsProvider;
     
+    private CancellationTokenSource? _cancellationTokenSource;
+
+    [ImportingConstructor]
+    public ExtensionGui(ISettingsProvider settingsProvider)
+    {
+        _logger = this.Log();
+        _settingsProvider = settingsProvider;
+    }
     public UIToolView View
     {
         get
@@ -52,9 +64,15 @@ internal sealed class ExtensionGui : IGuiTool
     }
     private async ValueTask OnOpenDialogAsync()
     {
-        await OpenCustomDialogAsync(dismissible: true);
+        using (await _semaphore.WaitAsync( _cancellationTokenSource.Token))
+        {
+            await TaskSchedulerAwaiter.SwitchOffMainThreadAsync( _cancellationTokenSource.Token);
+
+            string result = ExtensionHelper.DoYourThing(ExtensionText.DescriptionLabel, _logger, _cancellationTokenSource.Token);
+            await OpenCustomDialogAsync(result,dismissible: true);
+        }
     }
-    private async Task<UIDialog> OpenCustomDialogAsync(bool dismissible = true)
+    private async Task<UIDialog> OpenCustomDialogAsync(string description, bool dismissible = true)
     {
         // Open a dialog
         UIDialog dialog
@@ -68,7 +86,7 @@ internal sealed class ExtensionGui : IGuiTool
                             .Text(ExtensionText.TitleLabel),
                         Label()
                             .Style(UILabelStyle.Body)
-                            .Text(ExtensionText.DescriptionLabel)),
+                            .Text(description)),
                 footerContent:
                 Button()
                     .AlignHorizontally(UIHorizontalAlignment.Right)
@@ -82,5 +100,12 @@ internal sealed class ExtensionGui : IGuiTool
         }
 
         return dialog;
+    }
+    
+    public void Dispose()
+    {
+        _cancellationTokenSource?.Cancel();
+        _cancellationTokenSource?.Dispose();
+        _semaphore.Dispose();
     }
 }
