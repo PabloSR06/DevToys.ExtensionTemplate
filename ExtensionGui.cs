@@ -64,6 +64,7 @@ internal sealed class ExtensionGui : IGuiTool
     }
     private async ValueTask OnOpenDialogAsync()
     {
+        _cancellationTokenSource = new CancellationTokenSource();
         using (await _semaphore.WaitAsync( _cancellationTokenSource.Token))
         {
             await TaskSchedulerAwaiter.SwitchOffMainThreadAsync( _cancellationTokenSource.Token);
