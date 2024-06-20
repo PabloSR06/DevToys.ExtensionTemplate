@@ -68,7 +68,7 @@ internal sealed class ExtensionGui : IGuiTool
         {
             await TaskSchedulerAwaiter.SwitchOffMainThreadAsync( _cancellationTokenSource.Token);
 
-            string result = ExtensionHelper.DoYourThing(ExtensionText.DescriptionLabel, _logger, _cancellationTokenSource.Token);
+            string result = ExtensionHelper.DoYourThing(ExtensionText.HelloWorldLabel, _logger, _cancellationTokenSource.Token);
             await OpenCustomDialogAsync(result,dismissible: true);
         }
     }
