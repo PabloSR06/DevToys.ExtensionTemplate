@@ -13,7 +13,7 @@ namespace ExtensionTemplate;
     GroupName = PredefinedCommonToolGroupNames.Converters, // The group in which the tool will appear in the side bar.
     ResourceManagerAssemblyIdentifier = nameof(ResourceAssemblyIdentifier), // The Resource Assembly Identifier to use
     ResourceManagerBaseName =
-        "ExtensionTemplate.ExtensionText", // The full name (including namespace) of the resource file containing our localized texts
+        "ExtensionTemplate.Texts.ExtensionText", // The full name (including namespace) of the resource file containing our localized texts
     ShortDisplayTitleResourceName =
         nameof(ExtensionText.ShortDisplayTitle), // The name of the resource to use for the short display title
     LongDisplayTitleResourceName = nameof(ExtensionText.LongDisplayTitle),// The name of the resource to use for the long display title
