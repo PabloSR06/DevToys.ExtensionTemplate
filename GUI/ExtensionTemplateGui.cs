@@ -1,25 +1,27 @@
 ﻿using DevToys.Api;
 using System.ComponentModel.Composition;
+using ExtensionTemplate.Helpers;
+using ExtensionTemplate.Texts;
 using Microsoft.Extensions.Logging;
 using static DevToys.Api.GUI;
 
-namespace ExtensionTemplate;
+namespace ExtensionTemplate.GUI;
 
 [Export(typeof(IGuiTool))]
-[Name("ExtensionName")] // A unique, internal name of the tool.
+[Name("ExtensionTemplate")] // A unique, internal name of the tool.
 [ToolDisplayInformation(
     IconFontName = "FluentSystemIcons", // This font is available by default in DevToys
     IconGlyph = '\uE670', // An icon that represents a pizza
     GroupName = PredefinedCommonToolGroupNames.Converters, // The group in which the tool will appear in the side bar.
     ResourceManagerAssemblyIdentifier = nameof(ResourceAssemblyIdentifier), // The Resource Assembly Identifier to use
     ResourceManagerBaseName =
-        "ExtensionTemplate.Texts.ExtensionText", // The full name (including namespace) of the resource file containing our localized texts
+        "ExtensionTemplate.Texts.ExtensionTemplateText", // The full name (including namespace) of the resource file containing our localized texts
     ShortDisplayTitleResourceName =
-        nameof(ExtensionText.ShortDisplayTitle), // The name of the resource to use for the short display title
-    LongDisplayTitleResourceName = nameof(ExtensionText.LongDisplayTitle),// The name of the resource to use for the long display title
-    DescriptionResourceName = nameof(ExtensionText.Description), // The name of the resource to use for the description resource name
-    AccessibleNameResourceName = nameof(ExtensionText.AccessibleName))] // The name of the resource to use for the accessible name resource name
-internal sealed class ExtensionGui : IGuiTool, IDisposable
+        nameof(ExtensionTemplateText.ShortDisplayTitle), // The name of the resource to use for the short display title
+    LongDisplayTitleResourceName = nameof(ExtensionTemplateText.LongDisplayTitle),// The name of the resource to use for the long display title
+    DescriptionResourceName = nameof(ExtensionTemplateText.Description), // The name of the resource to use for the description resource name
+    AccessibleNameResourceName = nameof(ExtensionTemplateText.AccessibleName))] // The name of the resource to use for the accessible name resource name
+internal sealed class ExtensionTemplateGui : IGuiTool, IDisposable
 {
     private readonly UIToolView _view = new UIToolView();
     private readonly ILogger _logger;
@@ -29,7 +31,7 @@ internal sealed class ExtensionGui : IGuiTool, IDisposable
     private CancellationTokenSource? _cancellationTokenSource;
 
     [ImportingConstructor]
-    public ExtensionGui(ISettingsProvider settingsProvider)
+    public ExtensionTemplateGui(ISettingsProvider settingsProvider)
     {
         _logger = this.Log();
         _settingsProvider = settingsProvider;
@@ -42,7 +44,7 @@ internal sealed class ExtensionGui : IGuiTool, IDisposable
                 .Vertical()
                 .WithChildren(
                     Button()
-                        .Text(ExtensionText.OpenDialogLabel)
+                        .Text(ExtensionTemplateText.OpenDialogLabel)
                         .OnClick(OnOpenDialogAsync)
                 ); 
 
@@ -51,7 +53,7 @@ internal sealed class ExtensionGui : IGuiTool, IDisposable
                 _view.WithRootElement(Stack()
                     .Horizontal()
                     .WithChildren(
-                        Label().Style(UILabelStyle.Display).Text(ExtensionText.HelloWorldLabel),verticalStack));
+                        Label().Style(UILabelStyle.Display).Text(ExtensionTemplateText.HelloWorldLabel),verticalStack));
                 
             }
 
@@ -69,7 +71,7 @@ internal sealed class ExtensionGui : IGuiTool, IDisposable
         {
             await TaskSchedulerAwaiter.SwitchOffMainThreadAsync( _cancellationTokenSource.Token);
 
-            string result = ExtensionHelper.DoYourThing(ExtensionText.HelloWorldLabel, _logger, _cancellationTokenSource.Token);
+            string result = ExtensionTemplateHelper.DoYourThing(ExtensionTemplateText.HelloWorldLabel, _logger, _cancellationTokenSource.Token);
             await OpenCustomDialogAsync(result,dismissible: true);
         }
     }
@@ -84,14 +86,14 @@ internal sealed class ExtensionGui : IGuiTool, IDisposable
                     .WithChildren(
                         Label()
                             .Style(UILabelStyle.Subtitle)
-                            .Text(ExtensionText.TitleLabel),
+                            .Text(ExtensionTemplateText.TitleLabel),
                         Label()
                             .Style(UILabelStyle.Body)
                             .Text(description)),
                 footerContent:
                 Button()
                     .AlignHorizontally(UIHorizontalAlignment.Right)
-                    .Text(ExtensionText.CloseLabel)
+                    .Text(ExtensionTemplateText.CloseLabel)
                     .OnClick(OnCloseDialogButtonClick),
                 isDismissible: dismissible);
 

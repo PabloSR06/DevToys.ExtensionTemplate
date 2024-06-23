@@ -9,9 +9,9 @@
         <Authors>Pablo Suarez</Authors>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <Title>Extension Template</Title>
+        <Title>Title of the extension</Title>
         <Description>Template to create extension for DevToys</Description>
-        <RepositoryUrl>https://github.com/PabloSR06/ExtensionTemplate</RepositoryUrl>
+        <RepositoryUrl>https://github.com/PabloSR06/Devtoys.ExtensionTemplate</RepositoryUrl>
         <PackageProjectUrl>https://blog.pablosr.com/</PackageProjectUrl>
     </PropertyGroup>
 
@@ -26,17 +26,17 @@
     </ItemGroup>
 
     <ItemGroup>
-      <EmbeddedResource Update="Texts\ExtensionText.resx">
+      <EmbeddedResource Update="Texts\ExtensionTemplateText.resx">
         <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>ExtensionText.Designer.cs</LastGenOutput>
+        <LastGenOutput>ExtensionTemplateText.Designer.cs</LastGenOutput>
       </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Update="Texts\ExtensionText.Designer.cs">
+      <Compile Update="Texts\ExtensionTemplateText.Designer.cs">
         <DesignTime>True</DesignTime>
         <AutoGen>True</AutoGen>
-        <DependentUpon>ExtensionText.resx</DependentUpon>
+        <DependentUpon>ExtensionTemplateText.resx</DependentUpon>
       </Compile>
     </ItemGroup>
 
