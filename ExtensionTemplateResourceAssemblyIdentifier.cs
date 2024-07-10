@@ -4,8 +4,8 @@ using System.ComponentModel.Composition;
 namespace ExtensionTemplate;
 
 [Export(typeof(IResourceAssemblyIdentifier))]
-[Name(nameof(ResourceAssemblyIdentifier))]
-internal sealed class ResourceAssemblyIdentifier : IResourceAssemblyIdentifier
+[Name(nameof(ExtensionTemplateResourceAssemblyIdentifier))]
+internal sealed class ExtensionTemplateResourceAssemblyIdentifier : IResourceAssemblyIdentifier
 {
     public ValueTask<FontDefinition[]> GetFontDefinitionsAsync()
     {
